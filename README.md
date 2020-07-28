@@ -1,7 +1,7 @@
 i3status-kbd-layout
 ===================
 
-Keyboard layout indication for [i3status](https://github.com/i3/i3status).
+Keyboard layout indication for [i3status](https://github.com/i3/i3status) bar.
 
 ## Installing
 
@@ -30,7 +30,7 @@ Add new `read_file` section to your `i3status` configuration:
 
 The above section lets `i3status` bar read new keyboard layout from that path, and show it.
 
-Start `i3status-kbd-layout` when `i3wm` is started by adding the following line into `i3wm` configuration:
+Get `i3status-kbd-layout` started automatically when `i3wm` starts by adding the following line into `i3wm` configuration:
 
     exec --no-startup-id i3status-kbd-layout
 

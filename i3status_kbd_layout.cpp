@@ -7,12 +7,13 @@
 #include "XKeyboard.h"
 
 void write_kbd_layout(std::string filename, std::string layout) {
-  std::cerr << "updating file: " << filename << std::endl;
   std::ofstream f(filename.c_str());
   f << layout;
   f.close();
 
-  system("killall -USR1 i3status");
+  if (system("killall -USR1 i3status")) {
+    std::cerr << "Error sending SIGUSR1 to i3status process" << std::endl;
+  }
 }
 
 std::string get_new_layout(XKeyboard &xkb) {
